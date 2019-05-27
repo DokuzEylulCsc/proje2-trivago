@@ -1,4 +1,4 @@
-#### Bu Projenin Trivago(trivago.com) ile alakası kesinlikle bulunmamaktadır.
+#### Bu projenin Trivago(trivago.com) ile alakası kesinlikle bulunmamaktadır.
 
 # BİL 2002 Nesneye Yönelik Programlama
 ## Proje 2 Teslim Tarihi: 12 Haziran 2019 Çarşamba 21:30 (GitHub üzerinden)
