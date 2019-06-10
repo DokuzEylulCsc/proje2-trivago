@@ -1,0 +1,15 @@
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\proje2Form.exe.config
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\proje2Form.exe
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\proje2Form.pdb
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.csprojAssemblyReference.cache
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.EntryDatabase.resources
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Properties.Resources.resources
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.csproj.GenerateResource.cache
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.csproj.CoreCompileInputs.cache
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.exe
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.pdb
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Main_Menu.resources
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\System.Data.SQLite.dll
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\System.Data.SQLite.xml
+C:\Users\furka\source\repos\proje2Form\proje2Form\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.csproj.CopyComplete
