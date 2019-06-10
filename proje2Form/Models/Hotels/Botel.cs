@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proje2Console
+namespace proje2Form.Models
 {
-    class TekKisilikOda:Oda
+    class Botel : AbstractHotel
     {
     }
 }

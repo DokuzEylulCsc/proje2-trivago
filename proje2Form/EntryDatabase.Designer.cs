@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // button1
@@ -51,10 +50,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Deneme başlangıcı yap";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // EntryDatabase
             // 
@@ -73,7 +69,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

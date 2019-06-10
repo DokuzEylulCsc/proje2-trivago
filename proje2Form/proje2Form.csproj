@@ -55,26 +55,27 @@
     <Compile Include="EntryDatabase.Designer.cs">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kullanici\Kullanici.cs" />
-    <Compile Include="Kullanici\Musteri.cs" />
-    <Compile Include="Kullanici\Yonetici.cs" />
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Menu.Designer.cs">
       <DependentUpon>Main Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Oda\IkiKisilikOda.cs" />
-    <Compile Include="Oda\KralDairesi.cs" />
-    <Compile Include="Oda\Oda.cs" />
-    <Compile Include="Oda\TekKisilikOda.cs" />
-    <Compile Include="Oda\UcKisilikOda.cs" />
-    <Compile Include="Otel\ButikOtel.cs" />
-    <Compile Include="Otel\Hotel.cs" />
-    <Compile Include="Otel\Motel.cs" />
-    <Compile Include="Otel\Otel.cs" />
-    <Compile Include="Otel\Pansiyon.cs" />
-    <Compile Include="Otel\TatilKoyu.cs" />
+    <Compile Include="Models\Hotels\AbstractHotel.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Hotels\Botel.cs" />
+    <Compile Include="Models\Hotels\Boutique.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Rooms\Family.cs" />
+    <Compile Include="Models\Hotels\Motel.cs" />
+    <Compile Include="Models\Hotels\Pension.cs" />
+    <Compile Include="Models\Hotels\Reservation.cs" />
+    <Compile Include="Models\Hotels\Resort.cs" />
+    <Compile Include="Models\Rooms\Room.cs" />
+    <Compile Include="Models\Rooms\RoyalSuite.cs" />
+    <Compile Include="Models\Rooms\SingleBed.cs" />
+    <Compile Include="Models\Rooms\TwinBed.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rezervasyon.cs" />
@@ -105,6 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

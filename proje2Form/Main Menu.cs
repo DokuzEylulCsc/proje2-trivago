@@ -7,22 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace proje2Form
 {
     public partial class Main_Menu : Form
     {
-        Form father;
-        public Main_Menu(Form father)
+        SQLiteConnection sQLiteConnection;
+        public Main_Menu()
         {
             InitializeComponent();
-            this.father = father;
-            father.Hide();
+        }
+
+        public Main_Menu(SQLiteConnection sQLiteConnection)
+        {
+            InitializeComponent();
+            this.sQLiteConnection = sQLiteConnection;
         }
 
         private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            father.Close();
+            Application.Exit();
         }
     }
 }

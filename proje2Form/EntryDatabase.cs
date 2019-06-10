@@ -17,22 +17,37 @@ namespace proje2Form
         {
             InitializeComponent();
         }
+        SQLiteConnection sQLiteConnection;
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection sQLiteConnection;
             MessageBox.Show("Lütfen Sonraki Diyalogda Kullanmak İstediğiniz Veritabanı dosyasını seçiniz!!");
-            openFileDialog1.ShowDialog();
-            if (openFileDialog1.ShowDialog().Equals("OK"))
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
+            if (openFileDialog.ShowDialog().ToString().Equals("OK"))
             {
-                sQLiteConnection = new SQLiteConnection("Data Source=" + openFileDialog1.FileName + ";Version=3;");
+                sQLiteConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
+                Main_Menu main_Menu = new Main_Menu(sQLiteConnection);
+                main_Menu.Show();
+                this.Hide();
             }
             else
             {
-
+                MessageBox.Show("Seçilen dosya geçersiz programı tekrar başlatın");
             }
-            Main_Menu main_Menu = new Main_Menu(this);
-            main_Menu.Show();
+           
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lütfen Sonraki Diyalogda Veritabanı Dosyasının Nereye Kaydedileceğini Seçiniz");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
+            saveFileDialog.ShowDialog();
+            MessageBox.Show(saveFileDialog.FileName);
+            SQLiteConnection.CreateFile(saveFileDialog.FileName);
+            sQLiteConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
+            sQLiteConnection.Close();
         }
     }
 }
