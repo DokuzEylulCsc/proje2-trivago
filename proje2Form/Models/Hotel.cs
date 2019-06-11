@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace proje2Form.Models
 {
-    abstract class AbstractHotel
+    class Hotel
     {
+        public int ID { get; set; }
         public int Star { get; set; }
         public string Name { get; set; }
-
-        public List<Room> Rooms = new List<Room>();
-
+        public string HotelType { get; set; }
     }
 }

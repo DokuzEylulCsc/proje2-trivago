@@ -10,8 +10,7 @@ namespace proje2Form.Models
     {
         public int RoomNumber { get; set; }
         public double Price { get; set; }
-        public AbstractHotel Hotel { get; set; }
-
+        public Hotel Hotel { get; set; }
         public List<string> Properties = new List<string>();
     }
 }

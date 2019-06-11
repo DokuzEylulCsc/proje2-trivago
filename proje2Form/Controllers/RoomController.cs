@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace proje2Form.Controllers
 {
-    static class HotelController
+    class RoomController
     {
-        Hotel hotel;
-        public static void CreateHotel(string type, string name, int star)
+        Room room;
+        public static void CreateRoom(string type, int roomNumber, double price, Hotel hotel)
         {
-            
+           
         }
     }
 }
