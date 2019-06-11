@@ -80,5 +80,19 @@ namespace proje2Form
             sqlCommand.CommandText = "INSERT into hotel_types(hotel_type_name) values ('" + s + "')";
             sqlCommand.ExecuteNonQuery();
         }
+
+        public static List<string> GetRoomTypes()
+        {
+            sqlCommand.Connection = sqlConnection;
+            List<string> temp = new List<string>();
+            sqlCommand.CommandText = "Select * from room_props";
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (Database.sqlDataReader.Read())
+            {
+                temp.Add(Database.sqlDataReader["property_name"].ToString());
+            }
+            sqlDataReader.Close();
+            return temp;
+        }
     }
 }
