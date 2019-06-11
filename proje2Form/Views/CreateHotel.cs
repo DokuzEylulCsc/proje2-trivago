@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace proje2Form.Views
 {
@@ -19,7 +20,13 @@ namespace proje2Form.Views
 
         private void CreateHotel_Load(object sender, EventArgs e)
         {
-
+            Database.sqlCommand.CommandText = "Select * from hotel_types";
+            Database.sqlCommand.Connection = Database.sqlConnection;
+            Database.sqlDataReader = Database.sqlCommand.ExecuteReader();
+            while (Database.sqlDataReader.Read())
+            {
+                comboBox1.Items.Add(Database.sqlDataReader["hotel_type_name"]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

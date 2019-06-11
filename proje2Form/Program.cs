@@ -17,10 +17,8 @@ namespace proje2Form
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new EntryDatabase());
-            Application.Run(new Views.CreateHotel());
-            Application.Run(new Views.CreateRoom());
-
+            Application.Run(new EntryDatabase());
+            //Application.Run(new Views.CreateHotel());
         }
     }
 }

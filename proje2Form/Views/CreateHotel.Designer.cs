@@ -40,12 +40,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Botel",
-            "Boutique",
-            "Motel",
-            "Pension",
-            "Resort"});
             this.comboBox1.Location = new System.Drawing.Point(109, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(219, 24);
@@ -57,7 +51,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 32);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Otel Oluştur";
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -113,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 194);
+            this.ClientSize = new System.Drawing.Size(360, 186);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -122,7 +116,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Name = "CreateHotel";
-            this.Text = "Otel Oluştur";
+            this.Text = "CreateHotel";
             this.Load += new System.EventHandler(this.CreateHotel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
