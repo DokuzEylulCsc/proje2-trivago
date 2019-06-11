@@ -19,7 +19,11 @@ namespace proje2Form.Views
 
         private void CreateRoom_Load(object sender, EventArgs e)
         {
-            
+            List<Models.Hotel> hotels = Controllers.HotelController.ListHotels();
+            foreach (Models.Hotel hotel in hotels)
+            {
+                comboBox1.Items.Add(hotel.Name);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

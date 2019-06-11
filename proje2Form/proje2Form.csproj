@@ -52,17 +52,23 @@
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="Views\AdminPanel.cs">
+    <Compile Include="Views\AdminViews\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AdminPanel.Designer.cs">
+    <Compile Include="Views\AdminViews\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateRoom.cs">
+    <Compile Include="Views\AdminViews\CreateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateRoom.Designer.cs">
+    <Compile Include="Views\AdminViews\CreateRoom.Designer.cs">
       <DependentUpon>CreateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerViews\CustomerPanel.Designer.cs">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EntryDatabase.cs">
       <SubType>Form</SubType>
@@ -86,34 +92,34 @@
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\CreateHotel.cs">
+    <Compile Include="Views\AdminViews\CreateHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateHotel.Designer.cs">
+    <Compile Include="Views\AdminViews\CreateHotel.Designer.cs">
       <DependentUpon>CreateHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateHotelType.cs">
+    <Compile Include="Views\AdminViews\CreateHotelType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateHotelType.Designer.cs">
+    <Compile Include="Views\AdminViews\CreateHotelType.Designer.cs">
       <DependentUpon>CreateHotelType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GetReservations.cs">
+    <Compile Include="Views\AdminViews\GetReservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GetReservations.Designer.cs">
+    <Compile Include="Views\AdminViews\GetReservations.Designer.cs">
       <DependentUpon>GetReservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListHotels.cs">
+    <Compile Include="Views\AdminViews\ListHotels.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ListHotels.Designer.cs">
+    <Compile Include="Views\AdminViews\ListHotels.Designer.cs">
       <DependentUpon>ListHotels.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\AdminPanel.resx">
+    <EmbeddedResource Include="Views\AdminViews\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CreateRoom.resx">
+    <EmbeddedResource Include="Views\AdminViews\CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EntryDatabase.resx">
@@ -131,16 +137,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\CreateHotel.resx">
+    <EmbeddedResource Include="Views\AdminViews\CreateHotel.resx">
       <DependentUpon>CreateHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CreateHotelType.resx">
+    <EmbeddedResource Include="Views\AdminViews\CreateHotelType.resx">
       <DependentUpon>CreateHotelType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GetReservations.resx">
+    <EmbeddedResource Include="Views\AdminViews\GetReservations.resx">
       <DependentUpon>GetReservations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ListHotels.resx">
+    <EmbeddedResource Include="Views\AdminViews\ListHotels.resx">
       <DependentUpon>ListHotels.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
