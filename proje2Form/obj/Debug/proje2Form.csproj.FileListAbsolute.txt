@@ -35,3 +35,4 @@ C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\p
 C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.AdminPanel.resources
 C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.CreateRoom.resources
 C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.GetReservations.resources
+C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.ListHotels.resources

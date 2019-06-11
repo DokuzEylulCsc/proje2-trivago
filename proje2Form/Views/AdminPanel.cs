@@ -40,5 +40,11 @@ namespace proje2Form.Views
             GetReservations getReservations = new GetReservations();
             getReservations.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ListHotels list = new ListHotels();
+            list.Show();
+        }
     }
 }

@@ -16,5 +16,14 @@ namespace proje2Form.Views
         {
             InitializeComponent();
         }
+
+        private void ListHotels_Load(object sender, EventArgs e)
+        {
+            List<Models.Hotel> hotels = Database.ListHotels();
+            foreach (Models.Hotel hotel in hotels)
+            {
+                listBox1.Items.Add(hotel.Name);
+            }
+        }
     }
 }
