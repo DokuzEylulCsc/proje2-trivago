@@ -14,5 +14,10 @@ namespace proje2Form.Controllers
         {
             
         }
+
+        public static void CreateHotelType(string type)
+        {
+
+        }
     }
 }

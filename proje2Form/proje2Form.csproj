@@ -80,6 +80,12 @@
     <Compile Include="Views\CreateHotel.Designer.cs">
       <DependentUpon>CreateHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateHotelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CreateHotelType.Designer.cs">
+      <DependentUpon>CreateHotelType.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EntryDatabase.resx">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CreateHotel.resx">
       <DependentUpon>CreateHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateHotelType.resx">
+      <DependentUpon>CreateHotelType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
