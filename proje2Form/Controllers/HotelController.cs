@@ -12,6 +12,10 @@ namespace proje2Form.Controllers
         static Hotel hotel;
         public static void CreateHotel(string type, string name, int star)
         {
+            hotel = new Hotel();
+            hotel.HotelType = type;
+            hotel.Name = name;
+            hotel.Star = star;
             
         }
 
