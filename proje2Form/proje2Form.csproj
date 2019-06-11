@@ -52,10 +52,16 @@
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="EntryDatabase.cs">
+    <Compile Include="Views\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntryDatabase.Designer.cs">
+    <Compile Include="Views\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EntryDatabase.Designer.cs">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\ExceptionLogger.cs" />
@@ -86,7 +92,10 @@
     <Compile Include="Views\CreateHotelType.Designer.cs">
       <DependentUpon>CreateHotelType.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EntryDatabase.resx">
+    <EmbeddedResource Include="Views\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EntryDatabase.resx">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">

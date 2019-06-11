@@ -18,12 +18,7 @@ namespace proje2Form
         {
             InitializeComponent();
         }
-
-        public Main_Menu(SQLiteConnection sQLiteConn)
-        {
-            InitializeComponent();
-            Database.sqlConnection = sQLiteConn;
-        }
+        
 
         private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {

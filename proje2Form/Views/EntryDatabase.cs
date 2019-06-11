@@ -20,15 +20,14 @@ namespace proje2Form
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Lütfen Sonraki Diyalogda Kullanmak İstediğiniz Veritabanı dosyasını seçiniz!!");
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
             if (openFileDialog.ShowDialog().ToString().Equals("OK"))
             {
                 Database.sqlConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
-                Main_Menu main_Menu = new Main_Menu(Database.sqlConnection);
                 Database.sqlConnection.Open();
-                main_Menu.Show();
+                Views.AdminPanel adminPanel = new Views.AdminPanel();
+                adminPanel.Show();
                 this.Hide();
             }
             else
