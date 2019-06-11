@@ -29,5 +29,15 @@ namespace proje2Form
         {
             Application.Exit();
         }
+
+        private void Main_Menu_Load(object sender, EventArgs e)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter("Select * From room_props", sQLiteConnection);
+            sQLiteConnection.Open();
+            DataSet ds = new DataSet();
+            da.Fill(ds, "room_props");
+            dataGridView1.DataSource = ds.Tables[0];
+            sQLiteConnection.Close();
+        }
     }
 }

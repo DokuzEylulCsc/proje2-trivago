@@ -15,7 +15,6 @@ namespace proje2Form.Controllers
         public void CreateCustomer(string name, string surname)
         {
             Customer customer = new Customer();
-            customer.Id = lastid++;
             customer.Name = name;
             customer.Surname = surname;
             customers.Add(customer);
