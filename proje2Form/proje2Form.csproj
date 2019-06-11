@@ -49,8 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="EntryDatabase.cs">
       <SubType>Form</SubType>
@@ -60,27 +60,17 @@
     </Compile>
     <Compile Include="Exceptions\ExceptionLogger.cs" />
     <Compile Include="Exceptions\HotelTypeNotFoundException.cs" />
-    <Compile Include="Factories\HotelFactory.cs" />
+    <Compile Include="Exceptions\RoomTypeNotFoundException.cs" />
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Menu.Designer.cs">
       <DependentUpon>Main Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Hotels\AbstractHotel.cs" />
+    <Compile Include="Models\Hotel.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Users\Admin.cs" />
-    <Compile Include="Models\Hotels\Botel.cs" />
-    <Compile Include="Models\Hotels\Boutique.cs" />
     <Compile Include="Models\Users\Customer.cs" />
-    <Compile Include="Models\Rooms\Family.cs" />
-    <Compile Include="Models\Hotels\Motel.cs" />
-    <Compile Include="Models\Hotels\Pension.cs" />
-    <Compile Include="Models\Hotels\Reservation.cs" />
-    <Compile Include="Models\Hotels\Resort.cs" />
-    <Compile Include="Models\Rooms\Room.cs" />
-    <Compile Include="Models\Rooms\RoyalSuite.cs" />
-    <Compile Include="Models\Rooms\SingleBed.cs" />
-    <Compile Include="Models\Rooms\TwinBed.cs" />
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +111,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Factories\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
