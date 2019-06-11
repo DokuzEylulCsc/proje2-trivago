@@ -20,12 +20,9 @@ namespace proje2Form.Views
 
         private void CreateHotel_Load(object sender, EventArgs e)
         {
-            Database.sqlCommand.CommandText = "Select * from hotel_types";
-            Database.sqlCommand.Connection = Database.sqlConnection;
-            Database.sqlDataReader = Database.sqlCommand.ExecuteReader();
-            while (Database.sqlDataReader.Read())
+            foreach (var item in Database.GetHotelTypes())
             {
-                comboBox1.Items.Add(Database.sqlDataReader["hotel_type_name"]);
+                comboBox1.Items.Add(item);
             }
         }
 
