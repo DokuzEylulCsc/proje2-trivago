@@ -79,6 +79,7 @@ namespace proje2Form
             sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandText = "INSERT into hotel_types(hotel_type_name) values ('" + s + "')";
             sqlCommand.ExecuteNonQuery();
+
         }
     }
 }
