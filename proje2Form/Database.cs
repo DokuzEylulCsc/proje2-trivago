@@ -20,6 +20,17 @@ namespace proje2Form
             return true;
         }
 
+        public static int GetHotelID(Models.Hotel hotel)
+        {
+            sqlCommand.CommandText = $"SELECT hotel_id FROM hotel WHERE name = '{hotel.Name}' AND star = '{hotel.Star.ToString()}' AND hotel_type = '{hotel.HotelType}'";
+            sqlDataReader = sqlCommand.ExecuteReader();
+            int temp;
+            sqlDataReader.Read();
+            temp = Convert.ToInt32(sqlDataReader["hotel_id"]);
+            sqlDataReader.Close();
+            return temp;
+        }
+
         public static List<string> GetHotelTypes()
         {
             List<string> temp = new List<string>();
@@ -30,6 +41,7 @@ namespace proje2Form
             {
                 temp.Add(Database.sqlDataReader["hotel_type_name"].ToString());
             }
+            sqlDataReader.Close();
             return temp;
         }
     }

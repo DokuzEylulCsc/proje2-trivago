@@ -16,7 +16,8 @@ namespace proje2Form.Controllers
             hotel.HotelType = type;
             hotel.Name = name;
             hotel.Star = star;
-            
+            Database.CreateHotel(hotel);
+            hotel.ID = Database.GetHotelID(hotel);
         }
 
         public static void CreateHotelType(string type)
