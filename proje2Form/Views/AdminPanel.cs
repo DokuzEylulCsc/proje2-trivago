@@ -32,5 +32,10 @@ namespace proje2Form.Views
             CreateHotelType createHotelType = new CreateHotelType();
             createHotelType.ShowDialog();
         }
+
+        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
