@@ -11,11 +11,10 @@ namespace proje2Form
     {
         public static SQLiteConnection sqlConnection;
         public static SQLiteDataReader sqlDataReader;
-        public static SQLiteCommand sqlCommand = new SQLiteCommand(sqlConnection);
-        
+        public static SQLiteCommand sqlCommand = new SQLiteCommand();
+
         public static bool CreateHotel(Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandText = "insert into hotel(name,star,hotel_type) values ('" + hotel.Name + "','" + hotel.Star + "' , '" + hotel.HotelType + "')";
             sqlCommand.ExecuteNonQuery();
             return true;
@@ -23,7 +22,6 @@ namespace proje2Form
 
         public static int GetHotelID(Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandText = $"SELECT hotel_id FROM hotel WHERE name = '{hotel.Name}' AND star = '{hotel.Star.ToString()}' AND hotel_type = '{hotel.HotelType}'";
             sqlDataReader = sqlCommand.ExecuteReader();
             int temp;
@@ -35,7 +33,6 @@ namespace proje2Form
 
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandText = "insert into room(price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')";
             sqlCommand.ExecuteNonQuery();
             return true;
@@ -43,14 +40,12 @@ namespace proje2Form
 
         public static List<Models.Hotel> ListHotels()
         {
-            sqlCommand.Connection = sqlConnection;
-            Models.Hotel tempHotel;
+            Models.Hotel tempHotel = new Models.Hotel();
             List<Models.Hotel> hotels = new List<Models.Hotel>();
             sqlCommand.CommandText = "SELECT * FROM hotel";
-            sqlDataReader = sqlCommand.ExecuteReader();
+            //sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                tempHotel = new Models.Hotel();
                 tempHotel.HotelType = sqlDataReader["hotel_type"].ToString();
                 tempHotel.ID = Convert.ToInt32(sqlDataReader["hotel_id"]);
                 tempHotel.Name = sqlDataReader["name"].ToString();
@@ -62,24 +57,16 @@ namespace proje2Form
 
         public static List<string> GetHotelTypes()
         {
-            sqlCommand.Connection = sqlConnection;
             List<string> temp = new List<string>();
-            sqlCommand.CommandText = "Select * from hotel_types";
-            sqlDataReader = sqlCommand.ExecuteReader();
+            Database.sqlCommand.CommandText = "Select * from hotel_types";
+            Database.sqlCommand.Connection = Database.sqlConnection;
+            Database.sqlDataReader = Database.sqlCommand.ExecuteReader();
             while (Database.sqlDataReader.Read())
             {
                 temp.Add(Database.sqlDataReader["hotel_type_name"].ToString());
             }
             sqlDataReader.Close();
             return temp;
-        }
-
-        public static void CreateHotelType(string s)
-        {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = "INSERT into hotel_types(hotel_type_name) values ('" + s + "')";
-            sqlCommand.ExecuteNonQuery();
-
         }
     }
 }
