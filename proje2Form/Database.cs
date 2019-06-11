@@ -31,6 +31,30 @@ namespace proje2Form
             return temp;
         }
 
+        public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
+        {
+            sqlCommand.CommandText = "insert into room(price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')";
+            sqlCommand.ExecuteNonQuery();
+            return true;
+        }
+
+        public static List<Models.Hotel> ListHotels()
+        {
+            Models.Hotel tempHotel = new Models.Hotel();
+            List<Models.Hotel> hotels = new List<Models.Hotel>();
+            sqlCommand.CommandText = "SELECT * FROM hotel";
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                tempHotel.HotelType = sqlDataReader["hotel_type"].ToString();
+                tempHotel.ID = Convert.ToInt32(sqlDataReader["hotel_id"]);
+                tempHotel.Name = sqlDataReader["name"].ToString();
+                tempHotel.Star = Convert.ToInt32(sqlDataReader["star"]);
+                hotels.Add(tempHotel);
+            }
+            return hotels;
+        }
+
         public static List<string> GetHotelTypes()
         {
             List<string> temp = new List<string>();
