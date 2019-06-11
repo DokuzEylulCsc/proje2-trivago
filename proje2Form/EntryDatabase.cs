@@ -28,6 +28,7 @@ namespace proje2Form
             {
                 sQLiteConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
                 Main_Menu main_Menu = new Main_Menu(sQLiteConnection);
+                
                 main_Menu.Show();
                 this.Hide();
             }
