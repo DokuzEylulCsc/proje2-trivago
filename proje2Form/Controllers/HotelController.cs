@@ -9,10 +9,18 @@ namespace proje2Form.Controllers
 {
     static class HotelController
     {
-        Hotel hotel;
-        public static void CreateHotel(string type, string name, int star)
+        private static Hotel Hotel { get; set; }
+        public static Hotel CreateHotel(string type, string name, int star)
         {
-            
+            Hotel.HotelType = type;
+            Hotel.Name = name;
+            Hotel.Star = star;
+            return Hotel;
+        }
+
+        public static void AddHotelType(string name)
+        {
+
         }
     }
 }
