@@ -58,6 +58,12 @@
     <Compile Include="Views\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CreateRoom.Designer.cs">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EntryDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,8 +98,23 @@
     <Compile Include="Views\CreateHotelType.Designer.cs">
       <DependentUpon>CreateHotelType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GetReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GetReservations.Designer.cs">
+      <DependentUpon>GetReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListHotels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListHotels.Designer.cs">
+      <DependentUpon>ListHotels.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateRoom.resx">
+      <DependentUpon>CreateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EntryDatabase.resx">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
@@ -115,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CreateHotelType.resx">
       <DependentUpon>CreateHotelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GetReservations.resx">
+      <DependentUpon>GetReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListHotels.resx">
+      <DependentUpon>ListHotels.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

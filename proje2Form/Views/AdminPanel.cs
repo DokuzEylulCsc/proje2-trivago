@@ -25,12 +25,20 @@ namespace proje2Form.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
+            CreateRoom createRoom = new CreateRoom();
+            createRoom.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             CreateHotelType createHotelType = new CreateHotelType();
             createHotelType.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GetReservations getReservations = new GetReservations();
+            getReservations.Show();
         }
     }
 }

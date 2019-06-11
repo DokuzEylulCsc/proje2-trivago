@@ -33,3 +33,5 @@ C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.Cre
 C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.CreateHotelType.resources
 C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.CreateHotelType.resources
 C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.AdminPanel.resources
+C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.CreateRoom.resources
+C:\Users\Taylan\source\repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.GetReservations.resources

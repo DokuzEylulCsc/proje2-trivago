@@ -19,18 +19,14 @@ namespace proje2Form.Views
 
         private void CreateRoom_Load(object sender, EventArgs e)
         {
-            foreach (Models.Hotel hotel in Controllers.HotelController.hotels)
-            {
-                comboBox1.Items.Add(hotel.Name);
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                Controllers.RoomController.CreateRoom()
-                MessageBox.Show("İşlem Tamam");
+                //Controllers.RoomController.CreateRoom();
                 this.Close();
             }
             catch (NullReferenceException nre)
