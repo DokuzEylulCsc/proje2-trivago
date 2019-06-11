@@ -11,12 +11,14 @@ namespace proje2Form
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EntryDatabase());
+            //Application.Run(new EntryDatabase());
+            Application.Run(new Views.CreateHotel());
         }
     }
 }

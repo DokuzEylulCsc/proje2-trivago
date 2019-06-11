@@ -12,10 +12,7 @@ namespace proje2Form.Exceptions
         public HotelTypeNotFoundException(string hotelname)
             : base(String.Format("Geçersiz Otel İsmi: {0}", hotelname))
         {
-            StreamWriter stream = File.AppendText("Log.txt");
-            stream.WriteLine(base.Message);
-            stream.Flush();
-            stream.Close();
+            ExceptionLogger.LogAnExcaption(this);
         }
     }
 }
