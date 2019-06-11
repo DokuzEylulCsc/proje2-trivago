@@ -11,7 +11,7 @@ namespace proje2Form.Models
         public int Star { get; set; }
         public string Name { get; set; }
 
-        //public List<Room> Rooms = new List<Room>();
+        public List<Room> Rooms = new List<Room>();
 
     }
 }

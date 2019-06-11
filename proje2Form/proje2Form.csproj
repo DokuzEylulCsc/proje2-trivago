@@ -57,6 +57,8 @@
     <Compile Include="EntryDatabase.Designer.cs">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\HotelTypeNotFoundException.cs" />
+    <Compile Include="Factories\HotelFactory.cs" />
     <Compile Include="Main Menu.cs">
       <SubType>Form</SubType>
     </Compile>

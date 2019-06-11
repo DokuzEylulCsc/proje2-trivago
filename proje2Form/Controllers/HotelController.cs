@@ -9,12 +9,18 @@ namespace proje2Form.Controllers
 {
     class HotelController
     {
-        public void CreateMotel(int star, string name)
+        List<AbstractHotel> hotels = new List<AbstractHotel>();
+
+        void CreateHotel(string type, string name, int star)
         {
-            Motel motel = new Motel();
-            motel.Star = star;
-            motel.Name = name;
-            //TODO Hoteller bir yerde tutulmalı
+            try
+            {
+                Factories.HotelFactory.CreateHotel(type, name, star);
+            }
+            catch(Exceptions.HotelTypeNotFoundException e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message);
+            }
         }
     }
 }
