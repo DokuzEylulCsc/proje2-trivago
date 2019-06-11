@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="EntryDatabase.cs">
       <SubType>Form</SubType>
     </Compile>

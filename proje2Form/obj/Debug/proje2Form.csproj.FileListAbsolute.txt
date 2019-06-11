@@ -29,3 +29,4 @@ C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\bin\Debug\S
 C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\bin\Debug\System.Data.SQLite.xml
 C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.csproj.CopyComplete
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.CreateHotel.resources

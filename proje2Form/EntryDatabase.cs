@@ -17,7 +17,6 @@ namespace proje2Form
         {
             InitializeComponent();
         }
-        SQLiteConnection sQLiteConnection;
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -26,9 +25,9 @@ namespace proje2Form
             openFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
             if (openFileDialog.ShowDialog().ToString().Equals("OK"))
             {
-                sQLiteConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
-                Main_Menu main_Menu = new Main_Menu(sQLiteConnection);
-                
+                Database.sqlConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
+                Main_Menu main_Menu = new Main_Menu(Database.sqlConnection);
+                Database.sqlConnection.Open();
                 main_Menu.Show();
                 this.Hide();
             }
@@ -47,8 +46,8 @@ namespace proje2Form
             saveFileDialog.ShowDialog();
             MessageBox.Show(saveFileDialog.FileName);
             SQLiteConnection.CreateFile(saveFileDialog.FileName);
-            sQLiteConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
-            sQLiteConnection.Close();
+            Database.sqlConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
+            Database.sqlConnection.Close();
         }
     }
 }

@@ -13,16 +13,16 @@ namespace proje2Form
 {
     public partial class Main_Menu : Form
     {
-        SQLiteConnection sQLiteConnection;
+        
         public Main_Menu()
         {
             InitializeComponent();
         }
 
-        public Main_Menu(SQLiteConnection sQLiteConnection)
+        public Main_Menu(SQLiteConnection sQLiteConn)
         {
             InitializeComponent();
-            this.sQLiteConnection = sQLiteConnection;
+            Database.sqlConnection = sQLiteConn;
         }
 
         private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,12 +32,16 @@ namespace proje2Form
 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
-            SQLiteDataAdapter da = new SQLiteDataAdapter("Select * From room_props", sQLiteConnection);
-            sQLiteConnection.Open();
+            SQLiteDataAdapter da = new SQLiteDataAdapter("Select * From room_props", Database.sqlConnection);
             DataSet ds = new DataSet();
             da.Fill(ds, "room_props");
             dataGridView1.DataSource = ds.Tables[0];
-            sQLiteConnection.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Views.CreateHotel createHotel = new Views.CreateHotel();
+            createHotel.Show();
         }
     }
 }
