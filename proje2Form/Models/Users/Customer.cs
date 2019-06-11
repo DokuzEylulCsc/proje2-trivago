@@ -8,6 +8,6 @@ namespace proje2Form.Models
 {
     class Customer : User
     {
-
+        
     }
 }
