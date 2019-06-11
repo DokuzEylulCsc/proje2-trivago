@@ -14,15 +14,14 @@ namespace proje2Form.Controllers
         {
             room = new Room();
             room.Type = type;
-            room.RoomNumber = roomNumber;
             room.Price = price;
             room.Hotel = hotel;
             Database.CreateRoom(room, hotel);
         }
 
-        public static List<string> ListRooms()
+        public static List<string> GetRoomTypes()
         {
-            return;
+            return Database.GetRoomTypes();
         }
     }
 }

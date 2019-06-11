@@ -11,20 +11,17 @@ namespace proje2Form
     {
         public static SQLiteConnection sqlConnection;
         public static SQLiteDataReader sqlDataReader;
-        public static SQLiteCommand sqlCommand = new SQLiteCommand(sqlConnection);
         
         public static bool CreateHotel(Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = "insert into hotel(name,star,hotel_type) values ('" + hotel.Name + "','" + hotel.Star + "' , '" + hotel.HotelType + "')";
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into hotel(name,star,hotel_type) values ('" + hotel.Name + "','" + hotel.Star + "' , '" + hotel.HotelType + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             return true;
         }
 
         public static int GetHotelID(Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = $"SELECT hotel_id FROM hotel WHERE name = '{hotel.Name}' AND star = '{hotel.Star.ToString()}' AND hotel_type = '{hotel.HotelType}'";
+            SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT hotel_id FROM hotel WHERE name = '{hotel.Name}' AND star = '{hotel.Star.ToString()}' AND hotel_type = '{hotel.HotelType}'", sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
             int temp;
             sqlDataReader.Read();
@@ -35,18 +32,16 @@ namespace proje2Form
 
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = "insert into room(price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')";
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             return true;
         }
 
         public static List<Models.Hotel> ListHotels()
         {
-            sqlCommand.Connection = sqlConnection;
+            SQLiteCommand sqlCommand = new SQLiteCommand("SELECT * FROM hotel", sqlConnection);
             Models.Hotel tempHotel;
             List<Models.Hotel> hotels = new List<Models.Hotel>();
-            sqlCommand.CommandText = "SELECT * FROM hotel";
             sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
@@ -62,9 +57,8 @@ namespace proje2Form
 
         public static List<string> GetHotelTypes()
         {
-            sqlCommand.Connection = sqlConnection;
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from hotel_types", sqlConnection);
             List<string> temp = new List<string>();
-            sqlCommand.CommandText = "Select * from hotel_types";
             sqlDataReader = sqlCommand.ExecuteReader();
             while (Database.sqlDataReader.Read())
             {
@@ -76,20 +70,18 @@ namespace proje2Form
 
         public static void CreateHotelType(string s)
         {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = "INSERT into hotel_types(hotel_type_name) values ('" + s + "')";
+            SQLiteCommand sqlCommand = new SQLiteCommand("INSERT into hotel_types(hotel_type_name) values ('" + s + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
         }
 
         public static List<string> GetRoomTypes()
         {
-            sqlCommand.Connection = sqlConnection;
+            SQLiteCommand sqlCommandLocal = new SQLiteCommand("Select * from room_props",sqlConnection);
             List<string> temp = new List<string>();
-            sqlCommand.CommandText = "Select * from room_props";
-            sqlDataReader = sqlCommand.ExecuteReader();
-            while (Database.sqlDataReader.Read())
+            sqlDataReader = sqlCommandLocal.ExecuteReader();
+            while (sqlDataReader.Read())
             {
-                temp.Add(Database.sqlDataReader["property_name"].ToString());
+                temp.Add(sqlDataReader["property_name"].ToString());
             }
             sqlDataReader.Close();
             return temp;

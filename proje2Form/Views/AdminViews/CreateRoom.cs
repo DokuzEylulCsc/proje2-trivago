@@ -25,7 +25,12 @@ namespace proje2Form.Views
                 comboBox1.Items.Add(hotel.Name);
             }
 
-            List<Models.Room> rooms = Controllers.RoomController.
+            List<string> rooms = Controllers.RoomController.GetRoomTypes();
+            foreach (string room in rooms)
+            {
+                comboBox2.Items.Add(room);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
