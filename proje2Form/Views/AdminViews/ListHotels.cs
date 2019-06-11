@@ -19,7 +19,7 @@ namespace proje2Form.Views
 
         private void ListHotels_Load(object sender, EventArgs e)
         {
-            List<Models.Hotel> hotels = Database.ListHotels();
+            List<Models.Hotel> hotels = Controllers.HotelController.ListHotels();
             foreach (Models.Hotel hotel in hotels)
             {
                 listBox1.Items.Add(hotel.Name);

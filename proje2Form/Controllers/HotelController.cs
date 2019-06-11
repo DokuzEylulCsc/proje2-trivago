@@ -24,5 +24,10 @@ namespace proje2Form.Controllers
         {
 
         }
+
+        public static List<Hotel> ListHotels()
+        {
+            return Database.ListHotels();
+        }
     }
 }
