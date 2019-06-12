@@ -107,5 +107,19 @@ namespace proje2Form
             sqlDataReader.Close();
             return temp;
         }
+
+        public static Models.User GetUserByID(int id)
+        {
+            Models.User temp = new Models.User();
+            SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM user WHERE user_id = '{id}'", sqlConnection);
+            sqlDataReader = sqlCommand.ExecuteReader();
+            sqlDataReader.Read();
+            temp.Id = Convert.ToInt32(sqlDataReader["user_id"]);
+            temp.Name = sqlDataReader["hotel_type"].ToString();
+            temp.Surname = sqlDataReader["name"].ToString();
+            temp.IsAdmin = Convert.ToInt32(sqlDataReader["isAdmin"]) == 1 ? true : false ;
+            sqlDataReader.Close();
+            return temp;
+        }
     }
 }
