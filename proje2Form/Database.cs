@@ -121,5 +121,26 @@ namespace proje2Form
             sqlDataReader.Close();
             return temp;
         }
+
+        public static int RegisterUser(string name, string surname)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand($"INSERT into user(user_name,user_surname,user_isAdmn) values ('" + name + "','" + surname + "','0')", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            Models.User temp = new Models.User();
+            temp.Name = name;
+            temp.Surname = surname;
+            return GetUserId(temp);
+        }
+
+        public static int GetUserId(Models.User user)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT user_id FROM user WHERE user_name = '{user.Name}' AND user_surname = '{user.Surname}'", sqlConnection);
+            sqlDataReader = sqlCommand.ExecuteReader();
+            int temp;
+            sqlDataReader.Read();
+            temp = Convert.ToInt32(sqlDataReader["user_id"]);
+            sqlDataReader.Close();
+            return temp;
+        }
     }
 }
