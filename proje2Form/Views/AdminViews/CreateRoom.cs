@@ -24,13 +24,26 @@ namespace proje2Form.Views
             {
                 comboBox1.Items.Add(hotel.Name);
             }
+
+            List<string> rooms = Controllers.RoomController.GetRoomTypes();
+            foreach (string room in rooms)
+            {
+                comboBox2.Items.Add(room);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                //Controllers.RoomController.CreateRoom();
+                Models.Hotel selectedHotel = new Models.Hotel();
+                List<Models.Hotel> hotels = Controllers.HotelController.ListHotels();
+                foreach (Models.Hotel hotel in hotels)
+                {
+                    if (comboBox1.SelectedItem.ToString() == hotel.Name) selectedHotel = hotel;
+                }
+                Controllers.RoomController.CreateRoom(comboBox2.SelectedItem.ToString(), Convert.ToDouble(textBox2.Text), selectedHotel);
                 this.Close();
             }
             catch (NullReferenceException nre)

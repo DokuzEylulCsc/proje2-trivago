@@ -19,7 +19,8 @@ namespace proje2Form.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Controllers.HotelController.CreateHotelType(textBox1.Text);
+            this.Close();
         }
     }
 }

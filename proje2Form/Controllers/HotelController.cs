@@ -22,7 +22,7 @@ namespace proje2Form.Controllers
 
         public static void CreateHotelType(string type)
         {
-            
+            Database.CreateHotelType(type);
         }
 
         public static List<Hotel> ListHotels()

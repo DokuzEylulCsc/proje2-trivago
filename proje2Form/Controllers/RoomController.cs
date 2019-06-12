@@ -10,9 +10,18 @@ namespace proje2Form.Controllers
     class RoomController
     {
         static Room room;
-        public static void CreateRoom(string type, int roomNumber, double price, Hotel hotel)
+        public static void CreateRoom(string type, double price, Hotel hotel)
         {
-           
+            room = new Room();
+            room.Type = type;
+            room.Price = price;
+            room.Hotel = hotel;
+            Database.CreateRoom(room, hotel);
+        }
+
+        public static List<string> GetRoomTypes()
+        {
+            return Database.GetRoomTypes();
         }
     }
 }

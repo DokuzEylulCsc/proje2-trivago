@@ -40,3 +40,4 @@ C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.Adm
 C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.CreateRoom.resources
 C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.GetReservations.resources
 C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.ListHotels.resources
+C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.CustomerPanel.resources

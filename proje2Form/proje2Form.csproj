@@ -122,6 +122,9 @@
     <EmbeddedResource Include="Views\AdminViews\CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerViews\CustomerPanel.resx">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EntryDatabase.resx">
       <DependentUpon>EntryDatabase.cs</DependentUpon>
     </EmbeddedResource>
