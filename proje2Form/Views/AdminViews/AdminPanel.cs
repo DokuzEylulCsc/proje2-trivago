@@ -49,6 +49,7 @@ namespace proje2Form.Views
 
         private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Database.sqlConnection.Close();
             Application.Exit();
         }
 
