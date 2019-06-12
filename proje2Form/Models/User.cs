@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proje2Form.Models
 {
-    abstract class User
+    class User
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -16,5 +16,18 @@ namespace proje2Form.Views
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(textBox1.Text) == 1)
+            {
+                AdminPanel adminPanel = new AdminPanel();
+                adminPanel.Show();
+            }
+            else
+            {
+                //Database.GetUserByID(Convert.ToInt32(textBox1.Text)) eklenecek
+            }
+        }
     }
 }
