@@ -2,3 +2,6 @@ Object reference not set to an instance of an object.
 Object reference not set to an instance of an object.
 Object reference not set to an instance of an object.
 Object reference not set to an instance of an object.
+Pogram Started At 12/06/2019 16:14:02
+12/06/2019 16:14:08 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
+Pogram Stopped At 12/06/2019 16:15:27
