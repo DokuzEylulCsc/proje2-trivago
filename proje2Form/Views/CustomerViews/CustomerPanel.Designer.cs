@@ -69,6 +69,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Bilgilerimi Güncelle";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // CustomerPanel
             // 
@@ -81,6 +82,7 @@
             this.Controls.Add(this.button1);
             this.Name = "CustomerPanel";
             this.Text = "CustomerView";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerPanel_FormClosed);
             this.Load += new System.EventHandler(this.CustomerPanel_Load);
             this.ResumeLayout(false);
 

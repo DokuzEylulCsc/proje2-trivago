@@ -17,5 +17,10 @@ namespace proje2Form.Controllers
         {
             return Database.RegisterUser(name, surname);
         }
+
+        public static void UserUpdate(int ID, string name, string surname)
+        {
+            Database.UserUpdate(ID, name, surname);
+        }
     }
 }

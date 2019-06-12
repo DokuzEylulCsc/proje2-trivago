@@ -12,9 +12,11 @@ namespace proje2Form.Views
 {
     public partial class CustomerPanel : Form
     {
-        public CustomerPanel()
+        Models.User user; 
+        public CustomerPanel(Models.User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void CustomerPanel_Load(object sender, EventArgs e)
@@ -22,10 +24,15 @@ namespace proje2Form.Views
 
         }
 
-        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        private void CustomerPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
             Logger.ProgramStopped();
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CustomerViews.UpdateUser updateUser = new CustomerViews.UpdateUser(user);
         }
     }
 }
