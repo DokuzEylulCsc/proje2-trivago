@@ -47,7 +47,12 @@ namespace proje2Form.Views
                 {
                     if (comboBox1.SelectedItem.ToString() == hotel.Name) selectedHotel = hotel;
                 }
-                Controllers.RoomController.CreateRoom(comboBox2.SelectedItem.ToString(), Convert.ToDouble(textBox2.Text), selectedHotel);
+                List<string> props = new List<string>();
+                foreach (int i in listBox1.SelectedIndices)
+                {
+                    props.Add(listBox1.Items[i].ToString());
+                }
+                Controllers.RoomController.CreateRoom(comboBox2.SelectedItem.ToString(), Convert.ToDouble(textBox2.Text), selectedHotel, props);
                 this.Close();
             }
             catch (NullReferenceException nre)

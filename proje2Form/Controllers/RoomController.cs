@@ -10,12 +10,13 @@ namespace proje2Form.Controllers
     class RoomController
     {
         static Room room;
-        public static void CreateRoom(string type, double price, Hotel hotel)
+        public static void CreateRoom(string type, double price, Hotel hotel,List<string> props)
         {
             room = new Room();
             room.Type = type;
             room.Price = price;
             room.Hotel = hotel;
+            room.Properties = props;
             Database.CreateRoom(room, hotel);
         }
 
@@ -32,6 +33,11 @@ namespace proje2Form.Controllers
         public static List<string> GetRoomProps()
         {
             return Database.GetRoomProps();
+        }
+
+        public static void CreateRoomProps(string prop)
+        {
+            Database.CreateRoomProps(prop);
         }
     }
 }

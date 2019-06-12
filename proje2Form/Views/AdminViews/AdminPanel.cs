@@ -63,5 +63,11 @@ namespace proje2Form.Views
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AdminViews.CreateRoomProp createRoomProp = new AdminViews.CreateRoomProp();
+            createRoomProp.Show();
+        }
     }
 }
