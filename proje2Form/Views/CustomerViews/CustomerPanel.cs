@@ -34,5 +34,11 @@ namespace proje2Form.Views
         {
             CustomerViews.UpdateUser updateUser = new CustomerViews.UpdateUser(user);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerViews.SearchReservation searchReservation = new CustomerViews.SearchReservation(user);
+            searchReservation.Show();
+        }
     }
 }

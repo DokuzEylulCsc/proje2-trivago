@@ -64,10 +64,9 @@ Pogram Started At 12/06/2019 19:18:51
 12/06/2019 19:18:55 - C:\Users\Taylan\Desktop\SonSonDeneme.sqlite Named Database Loaded
 Pogram Started At 12/06/2019 19:20:47
 12/06/2019 19:20:50 - C:\Users\Taylan\Desktop\SonSonDeneme.sqlite Named Database Loaded
-Pogram Started At 12/06/2019 19:22:12
-12/06/2019 19:22:14 - C:\Users\furka\Desktop\qwe.sqlite Named Database Loaded
-Pogram Started At 12/06/2019 19:23:21
-12/06/2019 19:23:24 - C:\Users\furka\Desktop\qwe.sqlite Named Database Loaded
-Pogram Started At 12/06/2019 19:24:37
-12/06/2019 19:24:39 - C:\Users\furka\Desktop\qwe.sqlite Named Database Loaded
-Pogram Stopped At 12/06/2019 19:25:14
+Pogram Started At 12/06/2019 20:00:44
+12/06/2019 20:00:47 - C:\Users\Taylan\Desktop\SonSonDeneme.sqlite Named Database Loaded
+Pogram Stopped At 12/06/2019 20:00:53
+Pogram Started At 12/06/2019 20:00:56
+12/06/2019 20:00:59 - C:\Users\Taylan\Desktop\SonSonDeneme.sqlite Named Database Loaded
+Pogram Stopped At 12/06/2019 20:01:23
