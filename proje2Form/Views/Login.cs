@@ -23,15 +23,14 @@ namespace proje2Form.Views
             if (user.IsAdmin == true)
             {
                 AdminPanel adminPanel = new AdminPanel();
-                this.Hide();
                 adminPanel.Show();
             }
             else
             {
                 CustomerPanel customerPanel = new CustomerPanel();
-                this.Hide();
                 customerPanel.Show();
             }
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
