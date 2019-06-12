@@ -54,7 +54,8 @@ namespace proje2Form.Views
 
         private void Button6_Click(object sender, EventArgs e)
         {
-
+            AdminViews.CreateRoomType createRoomType = new AdminViews.CreateRoomType();
+            createRoomType.Show();
         }
     }
 }
