@@ -24,7 +24,7 @@ namespace proje2Form.Views.CustomerViews
         {
             foreach (Models.Room room in rooms)
             {
-                listBox1.Items.Add($"{room.Hotel.Name} Otelinde {room.RoomNumber} Numaralı Oda")
+                listBox1.Items.Add($"{room.Hotel.Name} Otelinde {room.RoomNumber} Numaralı Oda");
             }
         }
     }
