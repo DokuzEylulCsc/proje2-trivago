@@ -97,9 +97,9 @@ namespace proje2Form
 
         public static List<string> GetRoomTypes()
         {
-            SQLiteCommand sqlCommandLocal = new SQLiteCommand("Select * from room_props",sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_props",sqlConnection);
             List<string> temp = new List<string>();
-            sqlDataReader = sqlCommandLocal.ExecuteReader();
+            sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
                 temp.Add(sqlDataReader["property_name"].ToString());
@@ -141,6 +141,37 @@ namespace proje2Form
             temp = Convert.ToInt32(sqlDataReader["user_id"]);
             sqlDataReader.Close();
             return temp;
+        }
+
+        public static void UserUpdate(int id,string name,string surname)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand($"UPDATE user SET user_name = {name}, user_surname = {surname} WHERE user_id='{id.ToString()}';", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+        }
+
+        public static void MakeReservation(Models.Reservation reservation)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand($"INSERT into reservation(customer_id,room_id,inDate,outDate) values ('" + reservation.customer_id + "','" + reservation.room_id + "','" + reservation.inDate + "', '" + reservation.outDate + "')", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+        }
+
+        public static List<Models.Reservation> GetReservationById(int customer_id)
+        {
+            List<Models.Reservation> reservations = new List<Models.Reservation>();
+            Models.Reservation tempReservation;
+            SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM reservation WHERE customer_id = '{customer_id}'", sqlConnection);
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                tempReservation = new Models.Reservation();
+                tempReservation.Id = Convert.ToInt32(sqlDataReader["reservation_id"]);
+                tempReservation.customer_id = Convert.ToInt32(sqlDataReader["customer_id"]);
+                tempReservation.room_id = Convert.ToInt32(sqlDataReader["room_id"]);
+                tempReservation.inDate = Convert.ToInt32(sqlDataReader["inDate"]);
+                tempReservation.outDate = Convert.ToInt32(sqlDataReader["outDate"]);
+                reservations.Add(tempReservation);
+            }
+            return reservations;
         }
     }
 }

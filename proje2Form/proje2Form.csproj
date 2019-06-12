@@ -54,6 +54,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Views\AdminViews\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
