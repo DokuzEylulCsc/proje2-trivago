@@ -30,7 +30,11 @@ namespace proje2Form.Views
             {
                 comboBox2.Items.Add(room);
             }
-
+            List<string> props = Controllers.RoomController.GetRoomProps();
+            foreach (string prop in props)
+            {
+                listBox1.Items.Add(prop);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

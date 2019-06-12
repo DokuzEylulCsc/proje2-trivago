@@ -28,5 +28,10 @@ namespace proje2Form.Controllers
         {
             Database.CreateRoomType(type);
         }
+
+        public static List<string> GetRoomProps()
+        {
+            return Database.GetRoomProps();
+        }
     }
 }
