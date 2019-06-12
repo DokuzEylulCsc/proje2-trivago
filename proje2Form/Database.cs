@@ -63,7 +63,7 @@ namespace proje2Form
 
         public static bool CreateRoomType(string s)
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room_props(property_name) values ('" + s + "')", sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room_type(type_name) values ('" + s + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             return true;
         }
