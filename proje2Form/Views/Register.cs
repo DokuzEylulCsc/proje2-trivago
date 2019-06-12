@@ -24,7 +24,8 @@ namespace proje2Form.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Controllers.UserController.CreateUser(textBox1.Text, textBox2.Text);
+            MessageBox.Show($"ID'niz: {Controllers.UserController.CreateUser(textBox1.Text, textBox2.Text)}, ID'nizi kaybetmeyiniz!");
+            this.Close();
         }
     }
 }

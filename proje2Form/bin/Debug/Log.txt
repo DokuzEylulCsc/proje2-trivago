@@ -11,3 +11,14 @@ Pogram Stopped At 12/06/2019 16:29:18
 Pogram Started At 12/06/2019 16:33:51
 12/06/2019 16:33:55 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
 Pogram Started At 12/06/2019 16:36:02
+Pogram Started At 12/06/2019 16:50:04
+12/06/2019 16:50:10 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 16:52:42
+Pogram Started At 12/06/2019 16:52:51
+12/06/2019 16:52:54 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 16:53:19
+12/06/2019 16:53:22 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 16:54:25
+12/06/2019 16:54:32 - C:\Users\Taylan\Desktop\SonDeneme.sqlite Named Database Created
+Pogram Started At 12/06/2019 16:55:25
+12/06/2019 16:55:28 - C:\Users\Taylan\Desktop\SonDeneme.sqlite Named Database Loaded
