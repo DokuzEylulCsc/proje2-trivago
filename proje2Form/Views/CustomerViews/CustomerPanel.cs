@@ -16,5 +16,16 @@ namespace proje2Form.Views
         {
             InitializeComponent();
         }
+
+        private void CustomerPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Logger.ProgramStopped();
+            Application.Exit();
+        }
     }
 }

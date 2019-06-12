@@ -81,6 +81,7 @@
             this.Controls.Add(this.button1);
             this.Name = "CustomerPanel";
             this.Text = "CustomerView";
+            this.Load += new System.EventHandler(this.CustomerPanel_Load);
             this.ResumeLayout(false);
 
         }

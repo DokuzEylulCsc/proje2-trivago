@@ -19,15 +19,30 @@ namespace proje2Form.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(textBox1.Text) == 1)
+            Models.User user = Controllers.UserController.GetUserById(Convert.ToInt32(textBox1.Text));
+            if (user.IsAdmin == true)
             {
                 AdminPanel adminPanel = new AdminPanel();
+                this.Hide();
                 adminPanel.Show();
             }
             else
             {
-                //Database.GetUserByID(Convert.ToInt32(textBox1.Text)) eklenecek
+                CustomerPanel customerPanel = new CustomerPanel();
+                this.Hide();
+                customerPanel.Show();
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

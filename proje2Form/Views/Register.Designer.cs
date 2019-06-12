@@ -1,4 +1,4 @@
-﻿namespace proje2Form.Views.AdminViews
+﻿namespace proje2Form.Views
 {
     partial class Register
     {
@@ -57,6 +57,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Kayıt Ol";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -88,6 +89,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

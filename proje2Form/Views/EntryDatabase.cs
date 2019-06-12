@@ -27,8 +27,8 @@ namespace proje2Form
                 Logger.DatabaseLoaded(openFileDialog.FileName);
                 Database.sqlConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
                 Database.sqlConnection.Open();
-                Views.AdminPanel adminPanel = new Views.AdminPanel();
-                adminPanel.Show();
+                Views.Login login = new Views.Login();
+                login.Show();
                 this.Hide();
             }
             else
@@ -48,8 +48,8 @@ namespace proje2Form
             Database.sqlConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
             Database.sqlConnection.Open();
             Logger.DatabaseCreated(saveFileDialog.FileName);
-            Views.AdminPanel adminPanel = new Views.AdminPanel();
-            adminPanel.Show();
+            Views.Login login = new Views.Login();
+            login.Show();
             this.Hide();
         }
     }

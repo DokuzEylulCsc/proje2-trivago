@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Views\AdminViews\AdminPanel.cs">

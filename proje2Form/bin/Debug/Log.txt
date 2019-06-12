@@ -5,3 +5,9 @@ Object reference not set to an instance of an object.
 Pogram Started At 12/06/2019 16:14:02
 12/06/2019 16:14:08 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
 Pogram Stopped At 12/06/2019 16:15:27
+Pogram Started At 12/06/2019 16:29:05
+12/06/2019 16:29:09 - C:\Users\Taylan\Desktop\deneme1.sqlite Named Database Loaded
+Pogram Stopped At 12/06/2019 16:29:18
+Pogram Started At 12/06/2019 16:33:51
+12/06/2019 16:33:55 - C:\Users\Taylan\Desktop\asd.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 16:36:02
