@@ -48,6 +48,16 @@ namespace proje2Form
         {
             SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(room_price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
+            SQLiteCommand sqlCommand3 = new SQLiteCommand($"SELECT room_id FROM room WHERE room_price = '{room.Price}' AND hotel_id = '{hotel.ID}'", sqlConnection);
+            sqlDataReader = sqlCommand3.ExecuteReader();
+            sqlDataReader.Read();
+            int room_id = Convert.ToInt32(sqlDataReader["hotel_id"]);
+            sqlDataReader.Close();
+            foreach (string prop in room.Properties)
+            {
+                SQLiteCommand sqlCommand2 = new SQLiteCommand("insert into room_and_props(room_id,room_props) values ('" + room_id + "','" + prop + "')", sqlConnection);
+                sqlCommand2.ExecuteNonQuery();
+            }
             return true;
         }
 
@@ -206,5 +216,6 @@ namespace proje2Form
             sqlDataReader.Close();
             return rooms;
         }
+
     }
 }
