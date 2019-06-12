@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proje2Form.Models
 {
-    class Room
+    public class Room
     {
         public int RoomNumber { get; set; }
         public double Price { get; set; }
