@@ -93,6 +93,25 @@ namespace proje2Form
             return hotels;
         }
 
+        public static List<Models.Reservation> ListReservations()
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand("SELECT * FROM reservation", sqlConnection);
+            Models.Reservation tempReservation;
+            List<Models.Reservation> reservations = new List<Models.Reservation>();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                tempReservation = new Models.Reservation();
+                tempReservation.customer_id = Convert.ToInt32(sqlDataReader["customer_id"]);
+                tempReservation.room_id = Convert.ToInt32(sqlDataReader["room_id"]);
+                tempReservation.Id = Convert.ToInt32(sqlDataReader["reservation_id"]);
+                tempReservation.inDate = Convert.ToInt32(sqlDataReader["inDate"]);
+                tempReservation.outDate = Convert.ToInt32(sqlDataReader["outDate"]);
+                reservations.Add(tempReservation);
+            }
+            return reservations;
+        }
+
         public static List<string> GetHotelTypes()
         {
             SQLiteCommand sqlCommand = new SQLiteCommand("Select * from hotel_types", sqlConnection);
@@ -133,6 +152,19 @@ namespace proje2Form
             while (sqlDataReader.Read())
             {
                 temp.Add(sqlDataReader["property_name"].ToString());
+            }
+            sqlDataReader.Close();
+            return temp;
+        }
+
+        public static List<string> GetRoomPropsById(int room_id)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand($"Select * from room_and_props WHERE room_id = '{room_id}'", sqlConnection);
+            List<string> temp = new List<string>();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                temp.Add(sqlDataReader["room_props"].ToString());
             }
             sqlDataReader.Close();
             return temp;
@@ -217,12 +249,77 @@ namespace proje2Form
                 tempRoom.Price = Convert.ToDouble(sqlDataReader["room_price"]);
                 tempRoom.RoomNumber = Convert.ToInt32(sqlDataReader["room_id"]);
                 tempRoom.Type = sqlDataReader["room_type"].ToString();
-                tempRoom.Properties = GetRoomProps();
+                tempRoom.Properties = GetRoomPropsById(tempRoom.RoomNumber);
                 rooms.Add(tempRoom);
             }
             sqlDataReader.Close();
             return rooms;
         }
 
+        public static List<Models.Room> FilterRoomByType(string type)
+        {
+            List<Models.Room> allRooms = ListAllRooms();
+            foreach (Models.Room room in allRooms)
+            {
+                if (!room.Type.Equals(type))
+                    allRooms.Remove(room);
+            }
+            return allRooms;
+        }
+        public static List<Models.Room> FilterRoomsByPrice(List<Models.Room> rooms,int upPrice, int lowerPrice)
+        {
+            foreach (Models.Room room in rooms)
+            {
+                if (room.Price > upPrice || room.Price < lowerPrice)
+                    rooms.Remove(room);
+            }
+            return rooms;
+
+        }
+        public static List<Models.Room> FilterRoomByProps(List<string> props,List<Models.Room> rooms)
+        {
+            foreach (Models.Room item in rooms)
+            {
+                foreach (string prop in props)
+                {
+                    if (!item.Properties.Contains(prop))
+                        rooms.Remove(item);
+                }
+            }
+            return allRooms;
+        }
+
+        public static int DateTimeToInt(DateTime date)
+        {
+            return Convert.ToInt32(date.Year.ToString() + date.Month.ToString("00") + date.Day.ToString("00"));
+        }
+
+        public static List<Models.Room> FilterRoomsByDate(List<Models.Room> rooms, int inDate, int outDate)
+        {
+            List<Models.Reservation> reservations = ListReservations();
+            bool flag = false;
+            foreach (Models.Reservation reservation in reservations)
+            {
+                foreach (Models.Room room in rooms)
+                {
+                    if (reservation.room_id == room.RoomNumber)
+                    {
+                        if (reservation.inDate >= outDate || reservation.outDate <= inDate)
+                        {
+                            flag = true;
+                        }
+                        if (flag == false) rooms.Remove(room);
+                        flag = false;
+                    }
+                }
+            }
+            return rooms;
+        }
+
+        public static List<Models.Room> SearchReservation(List<string> props,DateTime inDate,DateTime outDate,string type, int upPrice, int lowPrice)
+        {
+            List<Models.Room> olasıOdalar = FilterRoomsByDate(FilterRoomByProps(props,FilterRoomsByPrice(FilterRoomByType(type),upPrice,lowPrice)), DateTimeToInt(inDate), DateTimeToInt(outDate));
+            return olasıOdalar;
+        }
     }
 }
