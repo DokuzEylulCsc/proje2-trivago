@@ -46,3 +46,5 @@ C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\p
 C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.AdminViews.CreateRoomType.resources
 C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.Login.resources
 C:\Users\Taylan\Source\Repos\DokuzEylulCsc\proje2-trivago\proje2Form\obj\Debug\proje2Form.Views.Register.resources
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.Login.resources
+C:\Users\furka\source\repos\proje2Form\proje2Form\obj\Debug\proje2Form.Views.Register.resources

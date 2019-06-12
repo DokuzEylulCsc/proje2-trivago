@@ -124,7 +124,7 @@ namespace proje2Form
 
         public static int RegisterUser(string name, string surname)
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand($"INSERT into user(user_name,user_surname,user_isAdmn) values ('" + name + "','" + surname + "','0')", sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand($"INSERT into user(user_name,user_surname,user_isAdmin) values ('" + name + "','" + surname + "','0')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             Models.User temp = new Models.User();
             temp.Name = name;
