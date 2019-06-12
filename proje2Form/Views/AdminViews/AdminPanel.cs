@@ -49,7 +49,7 @@ namespace proje2Form.Views
 
         private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Database.sqlConnection.Close();
+            Logger.ProgramStopped();
             Application.Exit();
         }
 
@@ -57,6 +57,11 @@ namespace proje2Form.Views
         {
             AdminViews.CreateRoomType createRoomType = new AdminViews.CreateRoomType();
             createRoomType.Show();
+        }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

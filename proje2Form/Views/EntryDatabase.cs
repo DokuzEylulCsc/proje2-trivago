@@ -24,6 +24,7 @@ namespace proje2Form
             openFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
             if (openFileDialog.ShowDialog().ToString().Equals("OK"))
             {
+                Logger.DatabaseLoaded(openFileDialog.FileName);
                 Database.sqlConnection = new SQLiteConnection("Data Source=" + openFileDialog.FileName + ";Version=3;");
                 Database.sqlConnection.Open();
                 Views.AdminPanel adminPanel = new Views.AdminPanel();
@@ -46,6 +47,7 @@ namespace proje2Form
             System.IO.File.Copy(System.Reflection.Assembly.GetEntryAssembly().Location + @"\..\..\..\taslak.sqlite", saveFileDialog.FileName);
             Database.sqlConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
             Database.sqlConnection.Open();
+            Logger.DatabaseCreated(saveFileDialog.FileName);
             Views.AdminPanel adminPanel = new Views.AdminPanel();
             adminPanel.Show();
             this.Hide();
