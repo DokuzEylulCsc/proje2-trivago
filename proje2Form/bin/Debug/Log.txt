@@ -37,3 +37,6 @@ Pogram Stopped At 12/06/2019 17:07:42
 Pogram Started At 12/06/2019 17:07:44
 12/06/2019 17:07:48 - C:\Users\Taylan\Desktop\SonDeneme.sqlite Named Database Loaded
 Pogram Stopped At 12/06/2019 17:07:51
+Pogram Started At 12/06/2019 17:42:02
+12/06/2019 17:42:06 - C:\Users\furka\Desktop\deneme.sqlite Named Database Loaded
+Pogram Stopped At 12/06/2019 17:51:29

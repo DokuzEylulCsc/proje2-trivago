@@ -97,7 +97,20 @@ namespace proje2Form
 
         public static List<string> GetRoomTypes()
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_props",sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_type",sqlConnection);
+            List<string> temp = new List<string>();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                temp.Add(sqlDataReader["type_name"].ToString());
+            }
+            sqlDataReader.Close();
+            return temp;
+        }
+
+        public static List<string> GetRoomProps()
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_props", sqlConnection);
             List<string> temp = new List<string>();
             sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
@@ -172,6 +185,26 @@ namespace proje2Form
                 reservations.Add(tempReservation);
             }
             return reservations;
+        }
+
+        public static List<Models.Room> ListAllRooms()
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room", sqlConnection);
+            List<Models.Room> rooms = new List<Models.Room>();
+            Models.Room tempRoom;
+            sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                tempRoom = new Models.Room();
+                tempRoom.Hotel = GetHotelByID(Convert.ToInt32(sqlDataReader["hotel_id"]));
+                tempRoom.Price = Convert.ToDouble(sqlDataReader["room_price"]);
+                tempRoom.RoomNumber = Convert.ToInt32(sqlDataReader["room_id"]);
+                tempRoom.Type = sqlDataReader["room_type"].ToString();
+                tempRoom.Properties = GetRoomProps();
+                rooms.Add(tempRoom);
+            }
+            sqlDataReader.Close();
+            return rooms;
         }
     }
 }
