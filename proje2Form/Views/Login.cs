@@ -27,7 +27,7 @@ namespace proje2Form.Views
             }
             else
             {
-                CustomerPanel customerPanel = new CustomerPanel();
+                CustomerPanel customerPanel = new CustomerPanel(user);
                 customerPanel.Show();
             }
             this.Close();
