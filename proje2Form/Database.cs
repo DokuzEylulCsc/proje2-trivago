@@ -46,12 +46,12 @@ namespace proje2Form
 
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(room_price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')", sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(room_price,room_type,hotel_id) values ('" + room.Price + "','" + room.Type + "','" + hotel.ID + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             SQLiteCommand sqlCommand3 = new SQLiteCommand($"SELECT room_id FROM room WHERE room_price = '{room.Price}' AND hotel_id = '{hotel.ID}'", sqlConnection);
             sqlDataReader = sqlCommand3.ExecuteReader();
             sqlDataReader.Read();
-            int room_id = Convert.ToInt32(sqlDataReader["hotel_id"]);
+            int room_id = Convert.ToInt32(sqlDataReader["room_id"]);
             sqlDataReader.Close();
             foreach (string prop in room.Properties)
             {
