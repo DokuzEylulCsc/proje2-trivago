@@ -46,5 +46,15 @@ namespace proje2Form.Views
             ListHotels list = new ListHotels();
             list.Show();
         }
+
+        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

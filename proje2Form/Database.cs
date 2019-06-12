@@ -32,10 +32,9 @@ namespace proje2Form
 
         public static Models.Hotel GetHotelByID(int id)
         {
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = $"SELECT * FROM hotel WHERE hotel_id = '{id}'";
-            sqlDataReader = sqlCommand.ExecuteReader();
             Models.Hotel temp = new Models.Hotel();
+            SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM hotel WHERE hotel_id = '{id}'", sqlConnection);
+            sqlDataReader = sqlCommand.ExecuteReader();
             sqlDataReader.Read();
             temp.ID = Convert.ToInt32(sqlDataReader["hotel_id"]);
             temp.HotelType = sqlDataReader["hotel_type"].ToString();
@@ -47,7 +46,14 @@ namespace proje2Form
 
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')", sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(room_price,hotel_id) values ('" + room.Price + "','" + hotel.ID + "')", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            return true;
+        }
+
+        public static bool CreateRoomType(string s)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room_props(property_name) values ('" + s + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             return true;
         }
@@ -85,7 +91,7 @@ namespace proje2Form
 
         public static void CreateHotelType(string s)
         {
-            SQLiteCommand sqlCommand = new SQLiteCommand("INSERT into hotel_types(hotel_type_name) values ('" + s + "')", sqlConnection);
+            SQLiteCommand sqlCommand = new SQLiteCommand($"INSERT into \"hotel_types\"(\"hotel_type_name\") values ('" + s + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
         }
 
