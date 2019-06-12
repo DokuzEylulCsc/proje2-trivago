@@ -19,7 +19,6 @@ namespace proje2Form
             Application.SetCompatibleTextRenderingDefault(false);
             Logger.ProgramStarted();
             Application.Run(new EntryDatabase());
-            //Application.Run(new Views.CreateHotel());
         }
     }
 }
