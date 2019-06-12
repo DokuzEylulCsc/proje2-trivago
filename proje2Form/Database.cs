@@ -33,6 +33,21 @@ namespace proje2Form
             return temp;
         }
 
+        public static Models.Hotel GetHotelByID(int id)
+        {
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandText = $"SELECT * FROM hotel WHERE hotel_id = '{id}'";
+            sqlDataReader = sqlCommand.ExecuteReader();
+            Models.Hotel temp = new Models.Hotel();
+            sqlDataReader.Read();
+            temp.ID = Convert.ToInt32(sqlDataReader["hotel_id"]);
+            temp.HotelType = sqlDataReader["hotel_type"].ToString();
+            temp.Name = sqlDataReader["name"].ToString();
+            temp.Star = Convert.ToInt32(sqlDataReader["star"]);
+            sqlDataReader.Close();
+            return temp;
+        }
+
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
             sqlCommand.Connection = sqlConnection;

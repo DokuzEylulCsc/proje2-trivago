@@ -43,10 +43,12 @@ namespace proje2Form
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Database Files (*.sqlite)|*.sqlite";
             saveFileDialog.ShowDialog();
-            MessageBox.Show(saveFileDialog.FileName);
-            SQLiteConnection.CreateFile(saveFileDialog.FileName);
+            System.IO.File.Copy(System.Reflection.Assembly.GetEntryAssembly().Location + @"\..\..\taslak.sqlite", saveFileDialog.FileName);
             Database.sqlConnection = new SQLiteConnection("Data Source=" + saveFileDialog.FileName + ";Version=3;");
-            Database.sqlConnection.Close();
+            Database.sqlConnection.Open();
+            Views.AdminPanel adminPanel = new Views.AdminPanel();
+            adminPanel.Show();
+            this.Hide();
         }
     }
 }
