@@ -10,7 +10,7 @@ namespace proje2Form
     static class Database
     {
         public static SQLiteConnection sqlConnection;
-        public static SQLiteDataReader sqlDataReader;
+        
         
         public static bool CreateHotel(Models.Hotel hotel)
         {
@@ -21,6 +21,7 @@ namespace proje2Form
 
         public static int GetHotelID(Models.Hotel hotel)
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT hotel_id FROM hotel WHERE name = '{hotel.Name}' AND star = '{hotel.Star.ToString()}' AND hotel_type = '{hotel.HotelType}'", sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
             int temp;
@@ -32,6 +33,7 @@ namespace proje2Form
 
         public static Models.Hotel GetHotelByID(int id)
         {
+            SQLiteDataReader sqlDataReader;
             Models.Hotel temp = new Models.Hotel();
             SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM hotel WHERE hotel_id = '{id}'", sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
@@ -40,12 +42,12 @@ namespace proje2Form
             temp.HotelType = sqlDataReader["hotel_type"].ToString();
             temp.Name = sqlDataReader["name"].ToString();
             temp.Star = Convert.ToInt32(sqlDataReader["star"]);
-            sqlDataReader.Close();
             return temp;
         }
 
         public static bool CreateRoom(Models.Room room,Models.Hotel hotel)
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("insert into room(room_price,room_type,hotel_id) values ('" + room.Price + "','" + room.Type + "','" + hotel.ID + "')", sqlConnection);
             sqlCommand.ExecuteNonQuery();
             SQLiteCommand sqlCommand3 = new SQLiteCommand($"SELECT room_id FROM room WHERE room_price = '{room.Price}' AND hotel_id = '{hotel.ID}'", sqlConnection);
@@ -77,6 +79,7 @@ namespace proje2Form
 
         public static List<Models.Hotel> ListHotels()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("SELECT * FROM hotel", sqlConnection);
             Models.Hotel tempHotel;
             List<Models.Hotel> hotels = new List<Models.Hotel>();
@@ -95,6 +98,7 @@ namespace proje2Form
 
         public static List<Models.Reservation> ListReservations()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("SELECT * FROM reservation", sqlConnection);
             Models.Reservation tempReservation;
             List<Models.Reservation> reservations = new List<Models.Reservation>();
@@ -114,12 +118,13 @@ namespace proje2Form
 
         public static List<string> GetHotelTypes()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("Select * from hotel_types", sqlConnection);
             List<string> temp = new List<string>();
             sqlDataReader = sqlCommand.ExecuteReader();
-            while (Database.sqlDataReader.Read())
+            while (sqlDataReader.Read())
             {
-                temp.Add(Database.sqlDataReader["hotel_type_name"].ToString());
+                temp.Add(sqlDataReader["hotel_type_name"].ToString());
             }
             sqlDataReader.Close();
             return temp;
@@ -133,6 +138,7 @@ namespace proje2Form
 
         public static List<string> GetRoomTypes()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_type",sqlConnection);
             List<string> temp = new List<string>();
             sqlDataReader = sqlCommand.ExecuteReader();
@@ -146,6 +152,7 @@ namespace proje2Form
 
         public static List<string> GetRoomProps()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room_props", sqlConnection);
             List<string> temp = new List<string>();
             sqlDataReader = sqlCommand.ExecuteReader();
@@ -159,6 +166,7 @@ namespace proje2Form
 
         public static List<string> GetRoomPropsById(int room_id)
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand($"Select * from room_and_props WHERE room_id = '{room_id}'", sqlConnection);
             List<string> temp = new List<string>();
             sqlDataReader = sqlCommand.ExecuteReader();
@@ -166,12 +174,12 @@ namespace proje2Form
             {
                 temp.Add(sqlDataReader["room_props"].ToString());
             }
-            sqlDataReader.Close();
             return temp;
         }
 
         public static Models.User GetUserByID(int id)
         {
+            SQLiteDataReader sqlDataReader;
             Models.User temp = new Models.User();
             SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM user WHERE user_id = '{id}'", sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
@@ -196,6 +204,7 @@ namespace proje2Form
 
         public static int GetUserId(Models.User user)
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT user_id FROM user WHERE user_name = '{user.Name}' AND user_surname = '{user.Surname}'", sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
             int temp;
@@ -219,6 +228,7 @@ namespace proje2Form
 
         public static List<Models.Reservation> GetReservationById(int customer_id)
         {
+            SQLiteDataReader sqlDataReader;
             List<Models.Reservation> reservations = new List<Models.Reservation>();
             Models.Reservation tempReservation;
             SQLiteCommand sqlCommand = new SQLiteCommand($"SELECT * FROM reservation WHERE customer_id = '{customer_id}'", sqlConnection);
@@ -238,6 +248,7 @@ namespace proje2Form
 
         public static List<Models.Room> ListAllRooms()
         {
+            SQLiteDataReader sqlDataReader;
             SQLiteCommand sqlCommand = new SQLiteCommand("Select * from room", sqlConnection);
             List<Models.Room> rooms = new List<Models.Room>();
             Models.Room tempRoom;
@@ -245,11 +256,11 @@ namespace proje2Form
             while (sqlDataReader.Read())
             {
                 tempRoom = new Models.Room();
-                tempRoom.Hotel = GetHotelByID(Convert.ToInt32(sqlDataReader["hotel_id"]));
-                tempRoom.Price = Convert.ToDouble(sqlDataReader["room_price"]);
+                tempRoom.Price = Convert.ToInt32(sqlDataReader["room_price"]);
                 tempRoom.RoomNumber = Convert.ToInt32(sqlDataReader["room_id"]);
                 tempRoom.Type = sqlDataReader["room_type"].ToString();
                 tempRoom.Properties = GetRoomPropsById(tempRoom.RoomNumber);
+                tempRoom.Hotel = GetHotelByID(Convert.ToInt32(sqlDataReader["hotel_id"]));
                 rooms.Add(tempRoom);
             }
             sqlDataReader.Close();
@@ -259,7 +270,8 @@ namespace proje2Form
         public static List<Models.Room> FilterRoomByType(string type)
         {
             List<Models.Room> allRooms = ListAllRooms();
-            foreach (Models.Room room in allRooms)
+            List<Models.Room> temp = ListAllRooms();
+            foreach (Models.Room room in temp)
             {
                 if (!room.Type.Equals(type))
                     allRooms.Remove(room);
@@ -268,7 +280,12 @@ namespace proje2Form
         }
         public static List<Models.Room> FilterRoomsByPrice(List<Models.Room> rooms,int upPrice, int lowerPrice)
         {
-            foreach (Models.Room room in rooms)
+            List<Models.Room> temp = new List<Models.Room>();
+            foreach (var item in rooms)
+            {
+                temp.Add(item);
+            }
+            foreach (Models.Room room in temp)
             {
                 if (room.Price > upPrice || room.Price < lowerPrice)
                     rooms.Remove(room);
@@ -278,12 +295,17 @@ namespace proje2Form
         }
         public static List<Models.Room> FilterRoomByProps(List<string> props,List<Models.Room> rooms)
         {
-            foreach (Models.Room item in rooms)
+            List<Models.Room> temp = new List<Models.Room>();
+            foreach (var item in rooms)
+            {
+                temp.Add(item);
+            }
+            foreach (Models.Room room in temp)
             {
                 foreach (string prop in props)
                 {
-                    if (!item.Properties.Contains(prop))
-                        rooms.Remove(item);
+                    if (!room.Properties.Contains(prop))
+                        rooms.Remove(room);
                 }
             }
             return rooms;
@@ -296,11 +318,13 @@ namespace proje2Form
 
         public static List<Models.Room> FilterRoomsByDate(List<Models.Room> rooms, int inDate, int outDate)
         {
+
+            List<Models.Room> temp = rooms;
             List<Models.Reservation> reservations = ListReservations();
             bool flag = false;
             foreach (Models.Reservation reservation in reservations)
             {
-                foreach (Models.Room room in rooms)
+                foreach (Models.Room room in temp)
                 {
                     if (reservation.room_id == room.RoomNumber)
                     {

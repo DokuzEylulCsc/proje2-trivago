@@ -54,6 +54,7 @@ namespace proje2Form.Views.CustomerViews
             }
             List<Models.Room> rooms = Controllers.ReservationController.SearchReservation(props, inDate, outDate, comboBox1.SelectedItem.ToString(), Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text));
             ListFilteredReservations fr = new ListFilteredReservations(rooms, user);
+            fr.Show();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace proje2Form.Controllers
     {
         public static List<Models.Room> SearchReservation(List<string> props, DateTime inDate, DateTime outDate, string type, double upPrice, double lowPrice)
         {
-            Database.SearchReservation(props, inDate, outDate, type, upPrice, lowPrice);
+            return Database.SearchReservation(props, inDate, outDate, type, Convert.ToInt32(upPrice), Convert.ToInt32(lowPrice));
         }
     }
 }
