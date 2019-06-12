@@ -22,3 +22,10 @@ Pogram Started At 12/06/2019 16:54:25
 12/06/2019 16:54:32 - C:\Users\Taylan\Desktop\SonDeneme.sqlite Named Database Created
 Pogram Started At 12/06/2019 16:55:25
 12/06/2019 16:55:28 - C:\Users\Taylan\Desktop\SonDeneme.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 16:57:55
+12/06/2019 16:57:58 - C:\Users\furka\Desktop\asd.sqlite Named Database Loaded
+Pogram Started At 12/06/2019 17:01:37
+Pogram Started At 12/06/2019 17:01:51
+Pogram Started At 12/06/2019 17:02:00
+12/06/2019 17:02:07 - C:\Users\furka\Desktop\deneme.sqlite Named Database Created
+Pogram Stopped At 12/06/2019 17:03:14

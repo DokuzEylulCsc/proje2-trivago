@@ -115,9 +115,9 @@ namespace proje2Form
             sqlDataReader = sqlCommand.ExecuteReader();
             sqlDataReader.Read();
             temp.Id = Convert.ToInt32(sqlDataReader["user_id"]);
-            temp.Name = sqlDataReader["hotel_type"].ToString();
-            temp.Surname = sqlDataReader["name"].ToString();
-            temp.IsAdmin = Convert.ToInt32(sqlDataReader["isAdmin"]) == 1 ? true : false ;
+            temp.Name = sqlDataReader["user_name"].ToString();
+            temp.Surname = sqlDataReader["user_surname"].ToString();
+            temp.IsAdmin = Convert.ToInt32(sqlDataReader["user_isAdmin"]) == 1 ? true : false ;
             sqlDataReader.Close();
             return temp;
         }
