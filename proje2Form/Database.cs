@@ -68,6 +68,13 @@ namespace proje2Form
             return true;
         }
 
+        public static bool CreateRoomProps(string s)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand("insert into room_props(property_name) values ('" + s + "')", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            return true;
+        }
+
         public static List<Models.Hotel> ListHotels()
         {
             SQLiteCommand sqlCommand = new SQLiteCommand("SELECT * FROM hotel", sqlConnection);
