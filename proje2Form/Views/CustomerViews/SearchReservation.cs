@@ -26,7 +26,11 @@ namespace proje2Form.Views.CustomerViews
             {
                 listBox1.Items.Add(prop);
             }
-
+            List<string> roomTypes = Controllers.RoomController.GetRoomTypes();
+            foreach (string item in roomTypes)
+            {
+                comboBox1.Items.Add(item);
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace proje2Form.Views.CustomerViews
             {
                 props.Add(listBox1.Items[i].ToString());
             }
-            List<Models.Room> rooms = Controllers.ReservationController.SearchReservation(props, inDate, outDate);
+            List<Models.Room> rooms = Controllers.ReservationController.SearchReservation(props, inDate, outDate, comboBox1.SelectedItem.ToString(), Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text));
             ListFilteredReservations fr = new ListFilteredReservations(rooms, user);
         }
     }
