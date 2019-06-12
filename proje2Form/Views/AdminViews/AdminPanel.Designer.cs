@@ -110,6 +110,7 @@
             this.Name = "AdminPanel";
             this.Text = "Yönetici Paneli";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.ResumeLayout(false);
 
         }

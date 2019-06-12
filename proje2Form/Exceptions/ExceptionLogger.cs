@@ -12,7 +12,7 @@ namespace proje2Form.Exceptions
         public static void LogAnExcaption(Exception e)
         {
             StreamWriter stream = File.AppendText("Log.txt");
-            stream.WriteLine(e.Message);
+            stream.Write(DateTime.Now + " - " + e.Message + "\n");
             stream.Flush();
             stream.Close();
         }
